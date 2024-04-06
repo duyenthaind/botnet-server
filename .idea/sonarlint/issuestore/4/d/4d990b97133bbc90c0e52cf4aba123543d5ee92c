@@ -1,0 +1,10 @@
+
+	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(ˆ·°Èıÿÿÿÿ8ïŒËè1J$52141b64-1c08-4a04-ac4c-752e8c3f41f4
+›
+java:S1450"XRemove the "bossGroup" field and declare it as a local variable in the relevant methods.(€Âì¶8ÊÀúÉè1J$70e9d31f-678f-4762-afe2-84bbf9712545
+¢
+java:S1450"ZRemove the "workerGroup" field and declare it as a local variable in the relevant methods.(Ÿ”³Ÿúÿÿÿÿ8ËÀúÉè1J$ac8c554d-a547-4125-948e-7ea4903afcc8
+ƒ
+java:S1128";Remove this unused import 'io.netty.channel.ChannelFuture'.(¥¡ÔĞÿÿÿÿÿ8ÙúËè1J$9b129f9d-5408-47c7-a615-e0b8dba65b8b
+ƒ
+java:S1128";Remove this unused import 'io.netty.channel.ChannelOption'.(º¶Ğ©úÿÿÿÿ8ôŒËè1J$7bd5f5cb-89b7-4c10-8a66-a8a101df155e
