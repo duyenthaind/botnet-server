@@ -9,7 +9,7 @@ import java.util.concurrent.TimeUnit;
  */
 public class ScheduleWorker {
 
-    private final ScheduledExecutorService scheduleExecutor = Executors.newScheduledThreadPool(10);
+    private final ScheduledExecutorService scheduleExecutor = Executors.newScheduledThreadPool(1);
 
     private ScheduleWorker() {
     }

@@ -1,5 +1,7 @@
 package com.app.worker;
 
+import com.app.codec.AppPacket;
+import com.app.command.PingCommand;
 import com.app.common.TcpUserClient;
 import com.app.server.TcpClientManager;
 import org.apache.logging.log4j.LogManager;
@@ -20,6 +22,11 @@ public class CheckClientConnectionWorker implements Runnable {
         List<TcpUserClient> tcpUserClients = TcpClientManager.getInstance().getAllClient();
         LOGGER.info("CheckClientConnectionWorker.run() schedule, numberClientConnected {}", tcpUserClients.size());
         for (TcpUserClient client : tcpUserClients) {
+
+            PingCommand command = new PingCommand();
+            AppPacket ping = command.writePacket();
+            client.sendPacket(ping);
+
             long current = System.currentTimeMillis();
             if (current - client.getLastActiveTime() > TimeUnit.SECONDS.toMillis(30) * 3) {
                 TcpClientManager.getInstance().removeClient(client);

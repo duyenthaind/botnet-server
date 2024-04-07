@@ -11,12 +11,13 @@ import java.nio.charset.StandardCharsets;
  */
 public abstract class BaseCommand {
     protected CommandTypeDefs type;
-    protected JsonObject data;
+    protected JsonObject data = new JsonObject();
 
     public AppPacket writePacket() {
         writeData();
 
         AppPacket packet = new AppPacket();
+        packet.setId(System.currentTimeMillis());
         packet.setType(type.getType());
         packet.setLength(data.toString().length());
         packet.setData(data.toString().getBytes(StandardCharsets.UTF_8));
