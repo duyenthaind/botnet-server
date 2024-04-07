@@ -36,6 +36,7 @@ public class TcpServerHandler extends SimpleChannelInboundHandler<AppPacket> {
         TcpUserClient client = new TcpUserClient();
         client.setClientId(UUID.randomUUID().toString());
         client.setChannel(ctx.channel());
+        client.setLastActiveTime(System.currentTimeMillis());
         ctx.channel().attr(CHANNEL_ATTACHMENT_ATTR).set(client);
 
         TcpClientManager.getInstance().addClient(client.getClientId(), client);

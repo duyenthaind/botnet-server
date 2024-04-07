@@ -28,10 +28,11 @@ public class CheckClientConnectionWorker implements Runnable {
             client.sendPacket(ping);
 
             long current = System.currentTimeMillis();
-            if (current - client.getLastActiveTime() > TimeUnit.SECONDS.toMillis(30) * 3) {
+            if (client.getLastActiveTime() != null && current - client.getLastActiveTime() > TimeUnit.SECONDS.toMillis(30) * 3) {
                 TcpClientManager.getInstance().removeClient(client);
                 LOGGER.info("CheckClientConnectionWorker.run() remove client {}", client.getClientId());
             }
         }
+        LOGGER.info("CheckClientConnectionWorker.run() finished");
     }
 }
